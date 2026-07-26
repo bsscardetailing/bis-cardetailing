@@ -1,41 +1,21 @@
-const translations = {
+const burger=document.getElementById("burger");
 
-de:{
+const sidebar=document.getElementById("sidebar");
 
-home:"Home",
-services:"Leistungen",
-about:"Über uns",
-gallery:"Galerie",
-contact:"Kontakt",
+burger.onclick=()=>{
 
-title:"Professionelle Autoaufbereitung in Bad Orb",
+sidebar.classList.toggle("active");
 
-subtitle:"Premium Car Detailing für höchste Ansprüche.",
+if(sidebar.classList.contains("active")){
 
-button:"Jetzt Termin vereinbaren"
+burger.innerHTML="✕
 
-},
+";
 
-en:{
+}else{
 
-home:"Home",
-services:"Services",
-about:"About Us",
-gallery:"Gallery",
-contact:"Contact",
-
-title:"Professional Car Detailing in Bad Orb",
-
-subtitle:"Premium detailing for those who expect perfection.",
-
-button:"Book Appointment"
+burger.innerHTML="☰";
 
 }
 
-};
-
-const de=document.getElementById("de-btn");
-const en=document.getElementById("en-btn");
-
-de.onclick=()=>alert("Deutsch wird im nächsten Schritt vollständig eingebaut.");
-en.onclick=()=>alert("English version will be added in the next update.");
+}
