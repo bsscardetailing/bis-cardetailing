@@ -1,96 +1,617 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSS Car Detailing | Autoaufbereitung in Bad Orb</title>
 
-<title>BSS Car Detailing | Professionelle Autoaufbereitung in Bad Orb</title>
+    <meta name="description"
+          content="Professionelle Autoaufbereitung, Politur und Keramikversiegelung in Bad Orb. BSS Car Detailing.">
 
-<meta name="description" content="Professionelle Autoaufbereitung in Bad Orb. Innenreinigung, Außenreinigung, Lackpflege und Premium Car Detailing.">
+    <link rel="stylesheet" href="style.css">
 
-<meta name="keywords" content="Autoaufbereitung Bad Orb, Car Detailing Bad Orb, Fahrzeugaufbereitung, Innenreinigung Auto, BSS Car Detailing">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<meta name="author" content="BSS Car Detailing">
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
 
-<header>
+<!-- ================= HEADER ================= -->
 
-<nav class="navbar">
+<header class="header" id="header">
 
-<div class="burger" id="burger">
+    <button class="burger" id="burger" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-☰
-
-</div>
-
-<div class="logo">
-
-<img src="images/logo.png" alt="BSS Car Detailing">
-
-</div>
-
-<div class="language-switch">
-
-<button id="de-btn">DE</button>
-
-<button id="en-btn">EN</button>
-
-</div>
-
-</nav>
+    <a href="#home" class="logo">
+        <img src="images/logo.png" alt="BSS Car Detailing">
+    </a>
 
 </header>
 
-<div class="sidebar" id="sidebar">
 
-<a href="#">Home</a>
+<!-- ================= BURGER MENU ================= -->
 
-<a href="#">Leistungen</a>
+<div class="menu-overlay" id="menuOverlay"></div>
 
-<a href="#">Über uns</a>
+<nav class="side-menu" id="sideMenu">
 
-<a href="#">Galerie</a>
+    <button class="menu-close" id="menuClose">
+        ×
+    </button>
 
-<a href="#">Preise</a>
+    <div class="menu-logo">
+        <img src="images/logo.png" alt="BSS Car Detailing">
+    </div>
 
-<a href="#">Kontakt</a>
+    <div class="menu-links">
 
-</div>
+        <a href="#home">HOME</a>
+
+        <a href="#leistungen">LEISTUNGEN</a>
+
+        <a href="#pakete">PAKETE</a>
+
+        <a href="#politur">POLITUR & KERAMIK</a>
+
+        <a href="#zusatzleistungen">ZUSATZLEISTUNGEN</a>
+
+        <a href="#ueber-uns">ÜBER UNS</a>
+
+        <a href="#galerie">GALERIE</a>
+
+        <a href="kontakt.html" class="menu-contact">
+            TERMIN BUCHEN
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-<div class="hero-content">
+    <div class="hero-image"></div>
 
-<h1>
-Professionelle Autoaufbereitung in Bad Orb
-</h1>
+    <div class="hero-overlay"></div>
 
-<p>
+    <div class="hero-content reveal">
 
-Premium Car Detailing für höchste Ansprüche.
+        <div class="small-title">
+            PROFESSIONELLE
+        </div>
 
-</p>
+        <h1>
+            CAR<br>
+            <span>DETAILING</span>
+        </h1>
 
-<a href="#contact" class="hero-button">
+        <div class="yellow-line"></div>
 
-Jetzt Termin vereinbaren
+        <p>
+            Professionelle Fahrzeugaufbereitung
+            mit Leidenschaft und Präzision.
+        </p>
 
-</a>
+        <a href="kontakt.html" class="yellow-button">
+            JETZT TERMIN BUCHEN
+        </a>
 
-</div>
+    </div>
 
 </section>
+
+
+<!-- ================= LEISTUNGEN ================= -->
+
+<section class="section services-section" id="leistungen">
+
+    <div class="section-title reveal">
+
+        <span></span>
+
+        <h2>UNSERE LEISTUNGEN</h2>
+
+        <span></span>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <article class="service-card reveal">
+            <img src="images/service-1.jpg" alt="Außenreinigung">
+            <div class="service-label">AUSSENREINIGUNG</div>
+        </article>
+
+        <article class="service-card reveal">
+            <img src="images/service-2.jpg" alt="Innenreinigung">
+            <div class="service-label">INNENREINIGUNG</div>
+        </article>
+
+        <article class="service-card reveal">
+            <img src="images/service-3.jpg" alt="Politur">
+            <div class="service-label">POLITUR</div>
+        </article>
+
+        <article class="service-card reveal">
+            <img src="images/service-4.jpg" alt="Versiegelung">
+            <div class="service-label">VERSIEGELUNG</div>
+        </article>
+
+        <article class="service-card reveal">
+            <img src="images/service-5.jpg" alt="Lederpflege">
+            <div class="service-label">LEDERPFLEGE</div>
+        </article>
+
+        <article class="service-card reveal">
+            <img src="images/service-6.jpg" alt="Felgenreinigung">
+            <div class="service-label">FELGEN & REIFEN</div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section section" id="ueber-uns">
+
+    <div class="about-content reveal">
+
+        <div class="about-text">
+
+            <div class="yellow-small-line"></div>
+
+            <h2>
+                IHR AUTO<br>
+                <span>WIE NEU</span>
+            </h2>
+
+            <p>
+                Bei BSS Car Detailing steht professionelle
+                Fahrzeugpflege im Mittelpunkt. Mit hochwertigen
+                Produkten, präziser Arbeit und viel Liebe zum Detail
+                bringen wir Ihr Fahrzeug wieder zum Strahlen.
+            </p>
+
+            <p>
+                Ob regelmäßige Pflege, intensive Aufbereitung
+                oder hochwertige Lackpflege – wir kümmern uns
+                um jedes Fahrzeug individuell.
+            </p>
+
+        </div>
+
+        <div class="about-image reveal">
+
+            <img src="images/about.jpg" alt="BSS Car Detailing">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAKETE ================= -->
+
+<section class="section packages-section" id="pakete">
+
+    <div class="section-title reveal">
+
+        <span></span>
+
+        <h2>UNSERE PAKETE</h2>
+
+        <span></span>
+
+    </div>
+
+
+    <div class="packages-grid">
+
+        <!-- KOMFORT -->
+
+        <article class="package reveal">
+
+            <div class="package-top">
+                KOMFORT PAKET
+            </div>
+
+            <div class="package-time">
+                Dauer ca. 2–3 Std.
+            </div>
+
+            <h3>INNEN</h3>
+
+            <ul>
+                <li>Gründliches Aussaugen</li>
+                <li>Reinigung Oberflächen & Armaturen</li>
+                <li>Scheibenreinigung innen & außen</li>
+                <li>Kunststoffpflege innen</li>
+            </ul>
+
+            <p class="ideal">
+                Ideal für regelmäßige Pflege
+                und gepflegte Fahrzeuge
+            </p>
+
+            <div class="package-price">
+                99€
+            </div>
+
+            <a href="kontakt.html" class="small-button">
+                TERMIN BUCHEN
+            </a>
+
+        </article>
+
+
+        <!-- PREMIUM -->
+
+        <article class="package package-featured reveal">
+
+            <div class="package-top">
+                PREMIUM PAKET
+            </div>
+
+            <div class="package-time">
+                Dauer ca. 4–5 Std.
+            </div>
+
+            <h3>INKL. KOMFORT</h3>
+
+            <ul>
+                <li>Intensive Innenraumreinigung</li>
+                <li>Tornadorreinigung</li>
+                <li>Polster- & Teppichreinigung</li>
+                <li>Tiefenreinigung Kunststoffflächen</li>
+                <li>Lederreinigung & Lederpflege</li>
+                <li>Kofferraumreinigung</li>
+                <li>Innenraumdesinfektion</li>
+                <li>Geruchsentfernung</li>
+            </ul>
+
+            <p class="ideal">
+                Ideal für stark beanspruchte
+                Innenräume
+            </p>
+
+            <div class="package-price">
+                199€
+            </div>
+
+            <a href="kontakt.html" class="small-button">
+                TERMIN BUCHEN
+            </a>
+
+        </article>
+
+
+        <!-- EXKLUSIV -->
+
+        <article class="package reveal">
+
+            <div class="package-top">
+                EXKLUSIV PAKET
+            </div>
+
+            <div class="package-time">
+                Dauer ca. 6–7 Std.
+            </div>
+
+            <h3>INKL. PREMIUM</h3>
+
+            <ul>
+                <li>Intensive Außenaufbereitung</li>
+                <li>Lackreinigung mit Reinigungsknete</li>
+                <li>Lackversiegelung mit Wachs</li>
+                <li>Kunststoffpflege außen</li>
+                <li>Reifenglanz</li>
+            </ul>
+
+            <p class="ideal">
+                Komplette Aufbereitung
+                von Innenraum und Lack
+            </p>
+
+            <div class="package-price">
+                299€
+            </div>
+
+            <a href="kontakt.html" class="small-button">
+                TERMIN BUCHEN
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= POLITUR / KERAMIK ================= -->
+
+<section class="politur-section" id="politur">
+
+    <div class="yellow-heading reveal">
+        <h2>POLITUR & KERAMIKVERSIEGELUNG</h2>
+    </div>
+
+
+    <div class="politur-content">
+
+        <div class="price-table reveal">
+
+            <h3>LACKAUFBEREITUNG / POLITUR</h3>
+
+            <div class="price-row">
+                <span>Hatchback</span>
+                <strong>ab 250 €</strong>
+            </div>
+
+            <div class="price-row">
+                <span>Limousine</span>
+                <strong>ab 300 €</strong>
+            </div>
+
+            <div class="price-row">
+                <span>SUV / Crossover</span>
+                <strong>ab 350 €</strong>
+            </div>
+
+        </div>
+
+
+        <div class="price-table reveal">
+
+            <h3>KERAMIKVERSIEGELUNG</h3>
+
+            <div class="price-row">
+                <span>Hatchback</span>
+                <strong>ab 200 €</strong>
+            </div>
+
+            <div class="price-row">
+                <span>Limousine</span>
+                <strong>ab 250 €</strong>
+            </div>
+
+            <div class="price-row">
+                <span>SUV / Crossover</span>
+                <strong>ab 300 €</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="price-note">
+        Der genaue Preis richtet sich nach Fahrzeuggröße,
+        Lackzustand und gewünschtem Leistungsumfang.
+    </p>
+
+</section>
+
+
+<!-- ================= ZUSATZLEISTUNGEN ================= -->
+
+<section class="section extras-section" id="zusatzleistungen">
+
+    <div class="section-title reveal">
+
+        <span></span>
+
+        <h2>ZUSATZLEISTUNGEN</h2>
+
+        <span></span>
+
+    </div>
+
+    <p class="section-subtitle">
+        AUF ANFRAGE ERHÄLTLICH
+    </p>
+
+
+    <div class="extras-grid">
+
+        <div class="extra reveal">
+            <div class="extra-icon">⌂</div>
+            <h3>DACHHIMMELREINIGUNG</h3>
+        </div>
+
+        <div class="extra reveal">
+            <div class="extra-icon">✦</div>
+            <h3>TIERHAARENTFERNUNG</h3>
+        </div>
+
+        <div class="extra reveal">
+            <div class="extra-icon">✧</div>
+            <h3>INTENSIVREINIGUNG</h3>
+        </div>
+
+        <div class="extra reveal">
+            <div class="extra-icon">+</div>
+            <h3>WEITERE LEISTUNGEN</h3>
+        </div>
+
+    </div>
+
+
+    <div class="vat">
+        ALLE PREISE INKL. 19% MWST.
+    </div>
+
+</section>
+
+
+<!-- ================= CAR DETAILING SERVICE ================= -->
+
+<section class="feature-section">
+
+    <div class="feature-image reveal">
+
+        <img src="images/service-6.jpg" alt="Car Detailing Service">
+
+    </div>
+
+    <div class="feature-text reveal">
+
+        <div class="yellow-small-line"></div>
+
+        <h2>
+            CAR<br>
+            <span>DETAILING SERVICE</span>
+        </h2>
+
+        <p>
+            Professionelle Pflege für Ihr Fahrzeug.
+            Wir verbinden gründliche Reinigung mit
+            hochwertigen Produkten und präziser Detailarbeit.
+        </p>
+
+        <a href="kontakt.html" class="yellow-button">
+            JETZT TERMIN BUCHEN
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALERIE ================= -->
+
+<section class="section gallery-section" id="galerie">
+
+    <div class="section-title reveal">
+
+        <span></span>
+
+        <h2>DAS KANN SICH<br>WIEDER SEHEN LASSEN</h2>
+
+        <span></span>
+
+    </div>
+
+    <p class="section-subtitle">
+        EINBLICKE IN UNSERE ARBEIT
+    </p>
+
+
+    <div class="gallery-grid">
+
+        <img class="reveal" src="images/gallery-1.jpg" alt="Detailing Ergebnis">
+        <img class="reveal" src="images/gallery-2.jpg" alt="Detailing Ergebnis">
+        <img class="reveal" src="images/gallery-3.jpg" alt="Detailing Ergebnis">
+        <img class="reveal" src="images/gallery-4.jpg" alt="Detailing Ergebnis">
+        <img class="reveal" src="images/gallery-5.jpg" alt="Detailing Ergebnis">
+        <img class="reveal" src="images/gallery-6.jpg" alt="Detailing Ergebnis">
+
+    </div>
+
+</section>
+
+
+<!-- ================= SATISFACTION ================= -->
+
+<section class="satisfaction">
+
+    <div class="satisfaction-line"></div>
+
+    <h2>100% KUNDENZUFRIEDENHEIT</h2>
+
+    <p>
+        QUALITÄT, AUF DIE SIE SICH VERLASSEN KÖNNEN
+    </p>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+    <div class="cta-box reveal">
+
+        <h2>JETZT TERMIN BUCHEN</h2>
+
+        <p>
+            Ihr Fahrzeug verdient professionelle Pflege.
+        </p>
+
+        <a href="kontakt.html" class="dark-button">
+            TERMIN BUCHEN
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        <img src="images/logo.png" alt="BSS Car Detailing">
+    </div>
+
+    <div class="footer-columns">
+
+        <div>
+            <h3>LEISTUNGEN</h3>
+            <a href="#leistungen">Innenreinigung</a>
+            <a href="#leistungen">Außenreinigung</a>
+            <a href="#politur">Politur</a>
+            <a href="#politur">Keramikversiegelung</a>
+        </div>
+
+        <div>
+            <h3>ÖFFNUNGSZEITEN</h3>
+            <p>Mo. – Fr. 08:00 – 18:00 Uhr</p>
+            <p>Sa. 09:00 – 16:00 Uhr</p>
+            <p>So. geschlossen</p>
+        </div>
+
+        <div>
+            <h3>KONTAKT</h3>
+            <a href="kontakt.html">Termin buchen</a>
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 BSS Car Detailing
+        </p>
+
+        <div>
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+        </div>
+
+    </div>
+
+</footer>
+
 
 <script src="script.js"></script>
 
