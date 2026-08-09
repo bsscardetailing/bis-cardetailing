@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "geom-graphic", sans-serif;
     background: var(--black);
     color: var(--white);
     overflow-x: hidden;
