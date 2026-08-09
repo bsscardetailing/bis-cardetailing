@@ -1429,7 +1429,7 @@ a {
 
     background: #292a2c;
 
-    border-top: 15px solid #f5c400;
+    border-top: 8px solid #f5c400;
 
     z-index: 1000;
 }
@@ -1505,7 +1505,7 @@ a {
 
     transform: translateX(-50%);
 
-    width: 330px;
+    width: 400px;
 
     display: block;
 
