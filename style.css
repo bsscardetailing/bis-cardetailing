@@ -71,15 +71,11 @@ a {
 }
 
 .logo {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
+    position: relative;
     z-index: 2;
 
     width: 155px;
-    height: 78px;
+    height: 75px;
 
     display: flex;
     align-items: center;
@@ -96,13 +92,13 @@ a {
 
     padding: 10px 20px;
 }
-
-.logo img {
-    width: 100%;
-    max-height: 58px;
-    object-fit: contain;
 }
 
+.logo img {
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+}
 
 /* Burger */
 
