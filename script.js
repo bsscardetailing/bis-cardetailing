@@ -1,146 +1,348 @@
-/* =====================================================
-   BSS CAR DETAILING
-   JAVASCRIPT
-===================================================== */
+/* =========================================================
+   BURGER MENU
+========================================================= */
 
-
-/* ================= BURGER MENU ================= */
-
-const burger = document.getElementById("burger");
-const sideMenu = document.getElementById("sideMenu");
-const menuOverlay = document.getElementById("menuOverlay");
-const menuClose = document.getElementById("menuClose");
-
-function openMenu() {
-    sideMenu.classList.add("active");
-    menuOverlay.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-}
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.nav-links');
 
 function closeMenu() {
-    sideMenu.classList.remove("active");
-    menuOverlay.classList.remove("active");
+  if (!toggle || !menu) {
+    return;
+  }
 
-    document.body.style.overflow = "";
+  toggle.classList.remove('is-open');
+  menu.classList.remove('is-open');
+  document.body.classList.remove('menu-open');
+
+  toggle.setAttribute('aria-expanded', 'false');
 }
 
-burger.addEventListener("click", openMenu);
 
-menuClose.addEventListener("click", closeMenu);
+function openMenu() {
+  if (!toggle || !menu) {
+    return;
+  }
 
-menuOverlay.addEventListener("click", closeMenu);
+  toggle.classList.add('is-open');
+  menu.classList.add('is-open');
+  document.body.classList.add('menu-open');
+
+  toggle.setAttribute('aria-expanded', 'true');
+}
 
 
-/* ================= MENU LINKS ================= */
+if (toggle && menu) {
 
-document.querySelectorAll(".menu-links a").forEach(link => {
+  toggle.addEventListener('click', () => {
+    const menuIsOpen = menu.classList.contains('is-open');
 
-    link.addEventListener("click", function () {
+    if (menuIsOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
-        if (this.getAttribute("href").startsWith("#")) {
-            closeMenu();
+
+  menu.querySelectorAll('a').forEach((link) => {
+
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+
+  });
+
+
+  document.addEventListener('keydown', (event) => {
+
+    if (
+      event.key === 'Escape' &&
+      menu.classList.contains('is-open')
+    ) {
+      closeMenu();
+    }
+
+  });
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+const reveals = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add('is-visible');
+
+          revealObserver.unobserve(entry.target);
+
         }
+
+      });
+
+    },
+    {
+      threshold: 0.14
+    }
+  );
+
+
+  reveals.forEach((item) => {
+    revealObserver.observe(item);
+  });
+
+} else {
+
+  reveals.forEach((item) => {
+    item.classList.add('is-visible');
+  });
+
+}
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+const glow = document.querySelector('.cursor-glow');
+
+if (glow) {
+
+  window.addEventListener('pointermove', (event) => {
+
+    glow.style.left = `${event.clientX}px`;
+    glow.style.top = `${event.clientY}px`;
+
+  });
+
+}
+
+
+/* =========================================================
+   MAGNETIC EFFECT
+========================================================= */
+
+/*
+   ВАЖНО:
+   здесь только элементы с классом .magnetic.
+
+   .package-card и .service-card здесь специально НЕТ,
+   потому что их transform используется для позиционирования.
+*/
+
+document
+  .querySelectorAll('.magnetic')
+  .forEach((element) => {
+
+    element.addEventListener('mousemove', (event) => {
+
+      const rect = element.getBoundingClientRect();
+
+      const x =
+        (
+          event.clientX -
+          rect.left -
+          rect.width / 2
+        ) / 18;
+
+      const y =
+        (
+          event.clientY -
+          rect.top -
+          rect.height / 2
+        ) / 18;
+
+
+      element.style.transform =
+        `translate(${x}px, ${y}px)`;
 
     });
 
-});
+
+    element.addEventListener('mouseleave', () => {
+
+      element.style.transform = '';
+
+    });
+
+  });
 
 
-/* ================= ESC CLOSE ================= */
+/* =========================================================
+   PACKAGE SWITCHER
+========================================================= */
 
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-        closeMenu();
-    }
-
-});
-
-
-/* ================= HEADER SCROLL ================= */
-
-const header = document.getElementById("header");
-
-window.addEventListener("scroll", function() {
-
-    if (window.scrollY > 60) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-
-});
-
-
-/* ================= SCROLL REVEAL ================= */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(
-
-    function(entries) {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold: 0.12
-    }
-
+const packageCards = Array.from(
+  document.querySelectorAll(
+    '.packages-switcher .package-card'
+  )
 );
 
 
-revealElements.forEach(element => {
+if (packageCards.length === 3) {
 
-    observer.observe(element);
+  /*
+     Массив определяет визуальный порядок:
 
-});
+     0 = слева
+     1 = центр
+     2 = справа
+  */
+
+  let packageOrder = [
+    packageCards[0],
+    packageCards[1],
+    packageCards[2]
+  ];
 
 
-/* ================= ACTIVE MENU LINK ================= */
+  function applyPackagePositions() {
 
-const sections = document.querySelectorAll("section[id]");
+    packageOrder.forEach((card, index) => {
 
-const menuLinks = document.querySelectorAll(".menu-links a[href^='#']");
+      card.classList.remove(
+        'package-left',
+        'package-center',
+        'package-right',
+        'is-active'
+      );
 
-window.addEventListener("scroll", function() {
 
-    let currentSection = "";
+      if (index === 0) {
 
-    sections.forEach(section => {
+        card.classList.add(
+          'package-left'
+        );
 
-        const sectionTop = section.offsetTop - 150;
+      }
 
-        if (window.scrollY >= sectionTop) {
 
-            currentSection = section.getAttribute("id");
+      if (index === 1) {
 
-        }
+        card.classList.add(
+          'package-center',
+          'is-active'
+        );
+
+      }
+
+
+      if (index === 2) {
+
+        card.classList.add(
+          'package-right'
+        );
+
+      }
 
     });
 
-    menuLinks.forEach(link => {
+  }
 
-        link.classList.remove("active");
 
-        if (link.getAttribute("href") === "#" + currentSection) {
+  packageCards.forEach((card) => {
 
-            link.classList.add("active");
+    card.addEventListener('click', (event) => {
 
-        }
+      /*
+         Если нажимаем на кнопку "Termin buchen",
+         пакет не переключается.
+      */
+
+      if (event.target.closest('.package-button')) {
+        return;
+      }
+
+
+      const clickedIndex =
+        packageOrder.indexOf(card);
+
+
+      /*
+         Центральный пакет уже активный.
+         Ничего не делаем.
+      */
+
+      if (clickedIndex === 1) {
+        return;
+      }
+
+
+      /*
+         Сохраняем текущий центральный пакет.
+      */
+
+      const currentCenter =
+        packageOrder[1];
+
+
+      /*
+         Нажатый пакет становится центральным.
+      */
+
+      packageOrder[1] = card;
+
+
+      /*
+         Старый центральный пакет занимает
+         место нажатого пакета.
+      */
+
+      packageOrder[clickedIndex] =
+        currentCenter;
+
+
+      /*
+         Обновляем CSS-классы.
+      */
+
+      applyPackagePositions();
 
     });
 
-});
+  });
+
+
+  /*
+     Устанавливаем начальное положение.
+  */
+
+  applyPackagePositions();
+
+}
+
+
+/* =========================================================
+   ABOUT PHOTO SWITCHER
+========================================================= */
+
+/*
+   В блоке "Ihr Auto wie neu" переключение
+   сделано через radio + CSS.
+
+   Поэтому JavaScript здесь не нужен.
+*/
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+const year = document.getElementById('year');
+
+if (year) {
+
+  year.textContent =
+    new Date().getFullYear();
+
+}
