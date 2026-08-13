@@ -1,0 +1,746 @@
+/* =========================================================
+   CONSENT VARIABLES
+========================================================= */
+
+:root {
+  --consent-yellow: #ebba00;
+  --consent-bg: #111116;
+  --consent-card: #19191f;
+  --consent-text: #f5f5f5;
+  --consent-muted:
+    rgba(255, 255, 255, 0.64);
+}
+
+
+/* =========================================================
+   BACKDROP
+========================================================= */
+
+.consent-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9998;
+
+  background:
+    rgba(0, 0, 0, 0.58);
+
+  backdrop-filter:
+    blur(7px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+.consent-backdrop.is-open {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.consent-panel {
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 22px;
+
+  z-index: 9999;
+
+  width:
+    min(
+      760px,
+      calc(100% - 30px)
+    );
+
+  max-height:
+    calc(100dvh - 44px);
+
+  overflow-y: auto;
+
+  border:
+    1px solid
+    rgba(235, 186, 0, 0.62);
+
+  border-radius: 12px;
+
+  background:
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(235, 186, 0, 0.12),
+      transparent 34%
+    ),
+
+    #19191f;
+
+  color:
+    var(--consent-text);
+
+  box-shadow:
+    0 28px 90px
+    rgba(0, 0, 0, 0.58);
+
+  transform:
+    translate(
+      -50%,
+      calc(100% + 50px)
+    );
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    transform 0.36s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+
+.consent-panel.is-open {
+  transform:
+    translate(
+      -50%,
+      0
+    );
+
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================================
+   YELLOW ACCENT
+========================================================= */
+
+.consent-accent {
+  width: 100%;
+
+  height: 7px;
+
+  background:
+    var(--consent-yellow);
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.consent-inner {
+  padding:
+    29px
+    40px
+    30px;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.consent-eyebrow {
+  margin:
+    0
+    0
+    8px;
+
+  color:
+    var(--consent-yellow);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  letter-spacing:
+    0.11em;
+}
+
+
+.consent-title {
+  margin: 0;
+
+  max-width: 100%;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      24px,
+      3.2vw,
+      34px
+    );
+
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  text-transform: uppercase;
+
+  letter-spacing:
+    -0.02em;
+
+  overflow-wrap: anywhere;
+}
+
+
+.consent-copy {
+  margin:
+    18px
+    0
+    0;
+
+  color:
+    var(--consent-muted);
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+.consent-copy a {
+  color:
+    var(--consent-yellow);
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.consent-actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.consent-button {
+  min-height: 46px;
+
+  padding:
+    11px
+    14px;
+
+  border:
+    1px solid
+    rgba(235, 186, 0, 0.7);
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color:
+    var(--consent-yellow);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.consent-button:hover {
+  transform:
+    translateY(-2px);
+}
+
+
+.consent-button--primary {
+  background:
+    var(--consent-yellow);
+
+  color: #111111;
+}
+
+
+.consent-button--primary:hover {
+  background:
+    #f5c92a;
+
+  color: #111111;
+}
+
+
+.consent-button--secondary {
+  border-color:
+    rgba(255, 255, 255, 0.2);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SETTINGS PANEL
+========================================================= */
+
+.consent-settings {
+  display: none;
+
+  margin-top: 25px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.consent-settings.is-open {
+  display: block;
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.consent-category {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding:
+    17px
+    0;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.075);
+}
+
+
+.consent-category:last-of-type {
+  border-bottom: 0;
+}
+
+
+.consent-category h3 {
+  margin:
+    0
+    0
+    5px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+
+.consent-category p {
+  margin: 0;
+
+  color:
+    var(--consent-muted);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.consent-switch {
+  position: relative;
+
+  width: 46px;
+
+  height: 26px;
+
+  flex-shrink: 0;
+}
+
+
+.consent-switch input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+.consent-switch span {
+  position: absolute;
+
+  inset: 0;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 999px;
+
+  background:
+    #0d0d11;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.consent-switch span::after {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+
+  left: 4px;
+
+  width: 16px;
+
+  height: 16px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.6);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.consent-switch input:checked + span {
+  border-color:
+    var(--consent-yellow);
+
+  background:
+    rgba(235, 186, 0, 0.16);
+}
+
+
+.consent-switch input:checked + span::after {
+  transform:
+    translateX(20px);
+
+  background:
+    var(--consent-yellow);
+}
+
+
+.consent-switch input:disabled + span {
+  cursor: not-allowed;
+
+  opacity: 0.72;
+}
+
+
+/* =========================================================
+   SETTINGS ACTIONS
+========================================================= */
+
+.consent-settings-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+
+.consent-settings-actions
+.consent-button {
+  min-width: 210px;
+}
+
+
+/* =========================================================
+   GOOGLE MAP PLACEHOLDER
+========================================================= */
+
+.consent-map-placeholder {
+  min-height: 430px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 32px;
+
+  background:
+    radial-gradient(
+      circle at 70% 30%,
+      rgba(235, 186, 0, 0.12),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      145deg,
+      #0a0b0f,
+      #121218
+    );
+
+  text-align: center;
+}
+
+
+.consent-map-placeholder-inner {
+  max-width: 560px;
+}
+
+
+.consent-map-placeholder-icon {
+  width: 56px;
+
+  height: 56px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin:
+    0
+    auto
+    19px;
+
+  border:
+    1px solid
+    rgba(235, 186, 0, 0.6);
+
+  border-radius: 50%;
+
+  color:
+    var(--consent-yellow);
+
+  font-size: 23px;
+}
+
+
+.consent-map-placeholder h3 {
+  margin:
+    0
+    0
+    10px;
+
+  color: #ffffff;
+
+  font-size: 23px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+
+.consent-map-placeholder p {
+  margin:
+    0
+    0
+    21px;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+.consent-map-placeholder button {
+  min-width: 200px;
+
+  padding:
+    13px
+    19px;
+
+  border:
+    1px solid
+    var(--consent-yellow);
+
+  border-radius: 7px;
+
+  background:
+    var(--consent-yellow);
+
+  color: #111111;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.consent-map-placeholder button:hover {
+  background: #f5c92a;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 860px) {
+
+  .consent-panel {
+    width:
+      min(
+        720px,
+        calc(100% - 24px)
+      );
+  }
+
+
+  .consent-inner {
+    padding:
+      28px
+      30px
+      28px;
+  }
+
+
+  .consent-title {
+    font-size:
+      clamp(
+        23px,
+        4.2vw,
+        31px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+
+  .consent-panel {
+    bottom: 10px;
+
+    width:
+      calc(100% - 20px);
+
+    max-height:
+      calc(100dvh - 20px);
+  }
+
+
+  .consent-inner {
+    padding:
+      23px
+      20px
+      22px;
+  }
+
+
+  .consent-title {
+    font-size: 24px;
+
+    line-height: 1.08;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  .consent-actions {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .consent-actions
+  .consent-button--primary {
+    order: -1;
+  }
+
+
+  .consent-category {
+    gap: 14px;
+  }
+
+
+  .consent-settings-actions
+  .consent-button {
+    width: 100%;
+  }
+
+
+  .consent-map-placeholder {
+    min-height: 300px;
+
+    padding:
+      24px
+      18px;
+  }
+
+}
