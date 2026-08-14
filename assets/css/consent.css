@@ -82,7 +82,6 @@
       rgba(235, 186, 0, 0.12),
       transparent 34%
     ),
-
     #19191f;
 
   color:
@@ -197,7 +196,9 @@
   letter-spacing:
     -0.02em;
 
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+
+  word-break: normal;
 }
 
 
@@ -526,7 +527,6 @@
       rgba(235, 186, 0, 0.12),
       transparent 35%
     ),
-
     linear-gradient(
       145deg,
       #0a0b0f,
@@ -683,7 +683,6 @@
 
 @media (max-width: 640px) {
 
-
   .consent-panel {
     bottom: 10px;
 
@@ -698,17 +697,43 @@
   .consent-inner {
     padding:
       23px
-      20px
+      16px
       22px;
   }
 
 
+  /* ВАЖНО:
+     DATENSCHUTZEINSTELLUNGEN В ОДНУ СТРОКУ */
+
   .consent-title {
-    font-size: 24px;
+    max-width: 100%;
 
-    line-height: 1.08;
+    font-size:
+      clamp(
+        16px,
+        4.9vw,
+        23px
+      );
 
-    overflow-wrap: anywhere;
+    line-height: 1;
+
+    letter-spacing:
+      -0.045em;
+
+    white-space: nowrap;
+
+    overflow-wrap: normal;
+
+    word-break: normal;
+  }
+
+
+  .consent-copy {
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    line-height: 1.62;
   }
 
 
@@ -741,6 +766,42 @@
     padding:
       24px
       18px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .consent-inner {
+    padding:
+      21px
+      13px
+      20px;
+  }
+
+
+  .consent-title {
+    font-size:
+      clamp(
+        15px,
+        4.65vw,
+        18px
+      );
+
+    letter-spacing:
+      -0.05em;
+
+    white-space: nowrap;
+  }
+
+
+  .consent-eyebrow {
+    font-size: 9px;
   }
 
 }
