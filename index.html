@@ -18,13 +18,18 @@
 
   <link
     rel="stylesheet"
-    href="https://use.typekit.net/cmu8poz.css"
+    href="assets/css/style.css"
   >
 
   <link
     rel="stylesheet"
-    href="assets/css/style.css"
+    href="assets/css/consent.css"
   >
+
+  <script
+    src="assets/js/consent.js"
+    defer
+  ></script>
 </head>
 
 
@@ -320,7 +325,7 @@
             >
 
             <h3>
-              Folieren
+              Felgen
             </h3>
 
             <div class="service-overlay">
@@ -373,76 +378,109 @@
       <div class="container about-grid">
 
 
+        <!-- LEFT CONTENT -->
+
         <div class="about-copy reveal">
 
-          <h2 class="about-title">
-            Ihr Auto wie neu
+          <p class="about-eyebrow">
+            Detailing mit Leidenschaft
+          </p>
+
+
+          <h2 class="about-title about-title-single">
+
+            <span class="about-title-white">
+              Ihr Auto
+            </span>
+
+            <strong class="about-title-yellow">
+              wie neu
+            </strong>
+
           </h2>
 
 
-          <p>
-            Bad Orb Car Detailing steht für absolute Leidenschaft,
-            Qualität und Präzision, wenn es um Ihren automobilen
-            Traum geht. Kommen Sie in den Genuss einer erstklassigen
-            und hochwertigen Fahrzeugaufbereitung.
+          <div class="about-title-line"></div>
+
+
+          <p class="about-lead">
+            Bad Orb Car Detailing steht für Leidenschaft,
+            Qualität und Präzision rund um Ihr Fahrzeug.
           </p>
 
 
           <p>
-            Individuelle Beratung und Kompetenz stehen bei uns an
-            oberster Stelle. Unser Unternehmen legt viel Wert auf
-            Kundenzufriedenheit und lässt keine Wünsche offen.
-            Unser Ziel ist es, Ihrem Fahrzeug einen neuwertigen
-            Look zu verleihen.
+            Mit hochwertiger Fahrzeugaufbereitung,
+            individueller Beratung und Liebe zum Detail
+            sorgen wir dafür, dass Ihr Fahrzeug wieder
+            einen neuwertigen und gepflegten Eindruck macht.
           </p>
+
+
+          <p>
+            Unser Anspruch ist ein Ergebnis,
+            das man nicht nur sieht, sondern bei jedem
+            Blick auf das Fahrzeug spürt.
+          </p>
+
+
+          <div class="about-facts">
+
+            <div class="about-fact">
+
+              <strong>
+                100%
+              </strong>
+
+              <span>
+                Handarbeit
+              </span>
+
+            </div>
+
+
+            <div class="about-fact">
+
+              <strong>
+                01
+              </strong>
+
+              <span>
+                Fokus: Qualität
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 
 
-        <div class="about-stack reveal delay-1">
+        <!-- RIGHT VISUAL -->
 
-          <input
-            class="about-photo-control"
-            type="radio"
-            name="about-photo"
-            id="about-photo-one"
-            checked
+        <div class="about-visual reveal delay-1">
+
+
+          <div
+            class="about-bg-word"
+            aria-hidden="true"
           >
-
-          <input
-            class="about-photo-control"
-            type="radio"
-            name="about-photo"
-            id="about-photo-two"
-          >
+            DETAILING
+          </div>
 
 
-          <label
-            class="about-photo about-photo-one"
-            for="about-photo-one"
-          >
+          <div class="about-main-photo about-main-photo-large">
 
             <img
               src="assets/img/about-car.jpg"
               alt="Fahrzeug bei der professionellen Außenreinigung"
             >
 
-          </label>
+          </div>
 
-
-          <label
-            class="about-photo about-photo-two"
-            for="about-photo-two"
-          >
-
-            <img
-              src="assets/img/about-wheel.jpg"
-              alt="Detailaufnahme einer Fahrzeugfelge"
-            >
-
-          </label>
 
         </div>
+
 
       </div>
 
@@ -1320,8 +1358,6 @@
     <div class="container">
 
 
-      <!-- SEPARATES FOOTER LOGO -->
-
       <div class="footer-brand">
 
         <img
@@ -1333,12 +1369,8 @@
       </div>
 
 
-      <!-- FOOTER COLUMNS -->
-
       <div class="footer-grid">
 
-
-        <!-- LEISTUNGEN -->
 
         <div class="footer-column">
 
@@ -1377,8 +1409,6 @@
 
         </div>
 
-
-        <!-- ÖFFNUNGSZEITEN -->
 
         <div class="footer-column">
 
@@ -1424,8 +1454,6 @@
         </div>
 
 
-        <!-- WEITERES -->
-
         <div class="footer-column">
 
           <h3>
@@ -1447,13 +1475,19 @@
               Datenschutz
             </a>
 
+            <button
+              type="button"
+              class="footer-consent-button"
+              data-consent-settings
+            >
+              Datenschutzeinstellungen
+            </button>
+
           </nav>
 
 
           <div class="footer-socials">
 
-
-            <!-- BAD ORB INSTAGRAM -->
 
             <a
               href="https://www.instagram.com/autopflege_bad_orb?igsh=MWQzMnhrc2N4YTg0&utm_source=qr"
@@ -1498,8 +1532,6 @@
 
             </a>
 
-
-            <!-- BSS INSTAGRAM -->
 
             <a
               href="https://www.instagram.com/bss_car_detailing?igsh=cGs1dnpjczNlNGcx&utm_source=qr"
@@ -1552,8 +1584,6 @@
 
       </div>
 
-
-      <!-- COPYRIGHT -->
 
       <div class="footer-bottom">
 
