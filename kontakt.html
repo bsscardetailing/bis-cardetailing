@@ -18,13 +18,18 @@
 
   <link
     rel="stylesheet"
-    href="https://use.typekit.net/cmu8poz.css"
+    href="assets/css/kontakt.css"
   >
 
   <link
     rel="stylesheet"
-    href="assets/css/kontakt.css"
+    href="assets/css/consent.css"
   >
+
+  <script
+    src="assets/js/consent.js"
+    defer
+  ></script>
 </head>
 
 
@@ -186,8 +191,6 @@
 
       <div class="container contact-grid">
 
-
-        <!-- FORM -->
 
         <div class="contact-form-card reveal">
 
@@ -433,8 +436,6 @@
         </div>
 
 
-        <!-- CONTACT INFO -->
-
         <aside class="contact-info-card reveal delay-1">
 
 
@@ -489,7 +490,7 @@
                 </small>
 
                 <a href="tel:+4915758193017">
-                  +4915758193017
+                  0157 58193017
                 </a>
 
               </div>
@@ -535,8 +536,6 @@
 
           </div>
 
-
-          <!-- INSTAGRAM -->
 
           <div class="contact-socials">
 
@@ -690,13 +689,53 @@
         </div>
 
 
-        <div class="map-frame reveal delay-1">
+        <div
+          class="map-frame reveal delay-1"
+          data-consent-map-wrapper
+        >
+
+          <div
+            class="consent-map-placeholder"
+            data-consent-map-placeholder
+          >
+
+            <div class="consent-map-placeholder-inner">
+
+              <div
+                class="consent-map-placeholder-icon"
+                aria-hidden="true"
+              >
+                ⌖
+              </div>
+
+              <h3>
+                Google Maps
+              </h3>
+
+              <p>
+                Die Karte wird erst geladen, wenn Sie externe Dienste zulassen.
+                Dabei können Daten an Google übertragen werden.
+              </p>
+
+              <button
+                type="button"
+                data-consent-enable-external
+              >
+                Google Maps laden
+              </button>
+
+            </div>
+
+          </div>
+
 
           <iframe
-            src="https://www.google.com/maps?q=Kanalstra%C3%9Fe%2043%2C%2063619%20Bad%20Orb%2C%20Deutschland&output=embed"
+            data-consent-service="google-maps"
+            data-consent-src="https://www.google.com/maps?q=Kanalstra%C3%9Fe%2043%2C%2063619%20Bad%20Orb%2C%20Deutschland&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Bad Orb Car Detailing - Kanalstraße 43, Bad Orb"
+            hidden
           ></iframe>
 
         </div>
@@ -816,6 +855,14 @@
         <a href="datenschutz.html">
           Datenschutz
         </a>
+
+        <button
+          type="button"
+          class="contact-footer-consent-button"
+          data-consent-settings
+        >
+          Datenschutzeinstellungen
+        </button>
 
       </div>
 
