@@ -280,8 +280,6 @@
 
     else {
 
-      unloadAdobeFonts();
-
       unloadExternalFrames();
 
     }
@@ -354,19 +352,6 @@
 
     document.head
       .appendChild(link);
-
-  }
-
-
-  function unloadAdobeFonts() {
-
-    document
-      .querySelectorAll(
-        'link[data-consent-adobe-fonts="true"]'
-      )
-      .forEach((link) => {
-        link.remove();
-      });
 
   }
 
