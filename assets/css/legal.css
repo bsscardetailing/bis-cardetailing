@@ -197,24 +197,34 @@ img {
     box-shadow 0.25s ease;
 }
 
-.legal-back-icon svg {
-  width: 18px;
-  height: 18px;
 
-  fill: none;
+/* =========================================================
+   CUSTOM BACK ARROW SVG
+========================================================= */
 
-  stroke: var(--yellow);
+.legal-back-arrow {
+  display: block;
 
-  stroke-width: 1.8;
+  width: 19px;
+  height: 19px;
 
-  stroke-linecap: round;
+  max-width: none;
 
-  stroke-linejoin: round;
+  object-fit: contain;
+
+  filter:
+    invert(76%)
+    sepia(89%)
+    saturate(1486%)
+    hue-rotate(4deg)
+    brightness(98%)
+    contrast(101%);
 
   transition:
-    stroke 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    filter 0.25s ease;
 }
+
 
 .legal-back-text {
   transition:
@@ -240,11 +250,13 @@ img {
 }
 
 .legal-back:hover
-.legal-back-icon svg {
-  stroke: #111111;
+.legal-back-arrow {
+  filter:
+    brightness(0)
+    saturate(100%);
 
   transform:
-    translateX(-1px);
+    translateX(-2px);
 }
 
 .legal-back:hover
@@ -1397,7 +1409,7 @@ span:last-child {
     height: 34px;
   }
 
-  .legal-back-icon svg {
+  .legal-back-arrow {
     width: 17px;
     height: 17px;
   }
