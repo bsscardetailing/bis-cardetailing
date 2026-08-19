@@ -463,7 +463,7 @@ if (contactForm) {
       try {
 
         await fetch(
-          'https://script.google.com/macros/s/AKfycbxlcRgs-MCt8Z06WPK-SBu3tCnqrrBXE0IodSpICyU_bYVCIlYRrPzXHd_gG_93nH-G/exec,
+          'https://script.google.com/macros/s/AKfycbxlcRgs-MCt8Z06WPK-SBu3tCnqrrBXE0IodSpICyU_bYVCIlYRrPzXHd_gG_93nH-G/exec',
           {
             method: 'POST',
 
